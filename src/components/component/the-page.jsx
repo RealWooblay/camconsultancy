@@ -192,7 +192,7 @@ export function ThePage() {
             <div>
               <h3 className="text-lg font-bold">About Us</h3>
               <p className="mt-4">
-                Unlock the full potential of your SaaS, web3, or early stage startup with Redbridge Solutions. Our team of experts will guide you through every step of the product development process, from ideation to launch. With our proven strategies and industry insights, we'll help you build a successful and scalable product that meets the needs of your target audience.
+                Unlock the full potential of your SaaS, web3, or early stage startup with Redbridge Solutions. Our team of experts will guide you through every step of the product development process, from ideation to launch. With our proven strategies and industry insights, we&apos;ll help you build a successful and scalable product that meets the needs of your target audience.
               </p>
             </div>
             <div>
