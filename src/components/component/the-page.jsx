@@ -5,13 +5,13 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useState } from "react"
-import PortfolioTrain from "./portfolio.train"
+import HighlightedOffering from "./highligted-offering"
 
 export function ThePage() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
-    <>
-      <header className="w-full bg-gray-900 text-white">
+    <main className="">
+      <header className="w-full bg-red-900 text-customWhite">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
           <Link className="text-lg font-bold" href="#">
             Acme Consultancy
@@ -19,9 +19,6 @@ export function ThePage() {
           <nav className="hidden space-x-4 md:flex">
             <Link className="hover:underline" href="#home">
               Home
-            </Link>
-            <Link className="hover:underline" href="#services">
-              Services
             </Link>
             <Link className="hover:underline" href="#team">
               Team
@@ -44,12 +41,9 @@ export function ThePage() {
           </Button>
         </div>
         {isNavOpen && (
-          <nav className="md:hidden">
+          <nav className="md:hidden text-customWhite">
             <Link className="block py-2 px-4 hover:bg-gray-800" href="#home">
               Home
-            </Link>
-            <Link className="block py-2 px-4 hover:bg-gray-800" href="#services">
-              Services
             </Link>
             <Link className="block py-2 px-4 hover:bg-gray-800" href="#team">
               Team
@@ -72,144 +66,88 @@ export function ThePage() {
             src="/techhex.png" />
           <div
             className="absolute inset-0 bg-gray-900/70 flex items-center justify-center">
-            <h1 className="text-4xl font-bold text-white md:text-6xl">Transforming Businesses</h1>
+            <h1 className="text-4xl font-bold  md:text-6xl">Transforming Businesses</h1>
           </div>
         </section>
-        <section className="py-12 md:py-24" id="services">
+        <section className="py-8 md:py-16 text-customWhite bg-customGray" id="team">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <div className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
-                <BriefcaseIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
-                <h3 className="mt-4 text-lg font-bold">Strategy Consulting</h3>
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  We help businesses develop and implement effective strategies to achieve their goals.
-                </p>
-              </div>
-              <div className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
-                <BarChartIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
-                <h3 className="mt-4 text-lg font-bold">Data Analytics</h3>
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  We leverage data to provide insights and drive informed decision-making.
-                </p>
-              </div>
-              <div className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
-                <CogIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
-                <h3 className="mt-4 text-lg font-bold">Process Optimization</h3>
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  We help businesses streamline their operations and improve efficiency.
-                </p>
-              </div>
-              <div className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
-                <LightbulbIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
-                <h3 className="mt-4 text-lg font-bold">Innovation Consulting</h3>
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  We assist businesses in developing and implementing innovative solutions.
-                </p>
-              </div>
-              <div className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
-                <UsersIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
-                <h3 className="mt-4 text-lg font-bold">Change Management</h3>
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  We help businesses navigate and adapt to organizational changes.
-                </p>
-              </div>
-              <div className="rounded-lg bg-gray-100 p-6 dark:bg-gray-800">
-                <RocketIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
-                <h3 className="mt-4 text-lg font-bold">Growth Acceleration</h3>
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  We assist businesses in achieving sustainable growth and expansion.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="py-12 md:py-24" id="team">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div className="flex items-center justify-center">
                 <img
                   alt="Team Member"
                   className="rounded-lg"
                   height={400}
-                  src="/placeholder.svg"
+                  src="/team.png"
                   style={{
                     aspectRatio: "300/400",
-                    objectFit: "cover",
+                    objectFit: "contain",
                   }}
-                  width={300} />
+                  width={400} />
               </div>
-              <div>
-                <h2 className="text-3xl font-bold">Meet Our Team</h2>
-                <p className="mt-4 text-gray-500 dark:text-gray-400">
-                  Our team of experienced consultants is dedicated to helping businesses achieve their goals. Get to
-                  know our lead consultant, Jane Doe.
-                </p>
-                <div className="mt-8 flex items-center space-x-4">
-                  <div className="flex flex-col items-start">
-                    <h3 className="text-xl font-bold">Jane Doe</h3>
-                    <div className="mt-2 flex space-x-4">
-                      <Link
-                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                        href="#">
-                        <LinkedinIcon className="h-6 w-6" />
-                      </Link>
-                      <Link
-                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                        href="#">
-                        <TwitterIcon className="h-6 w-6" />
-                      </Link>
-                      <Link
-                        className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-                        href="#">
-                        <GithubIcon className="h-6 w-6" />
-                      </Link>
+              <div className="flex items-center justify-center">
+                <div>
+                  <h2 className="text-3xl font-bold">Experienced and Dedicated Team</h2>
+                  <div className="mt-8 flex items-center space-x-4">
+                    <div className="flex flex-col items-start">
+                      <div className="mt-2 flex space-x-4">
+                        <Link
+                          href="#">
+                          <LinkedinIcon className="h-6 w-6" />
+                        </Link>
+                        <Link
+                          href="#">
+                          <TwitterIcon className="h-6 w-6" />
+                        </Link>
+                        <Link
+                          href="#">
+                          <GithubIcon className="h-6 w-6" />
+                        </Link>
+                      </div>
                     </div>
                   </div>
+                  <p className="mt-4  ">
+                    Our team consists of experienced professionals who are passionate about helping startups succeed. With a deep understanding of the SaaS and web3 industries, we bring valuable insights and expertise to every project. We work closely with our clients to ensure their vision is translated into a successful product.
+                  </p>
                 </div>
-                <p className="mt-4 text-gray-500 dark:text-gray-400">
-                  Jane is our lead consultant with over 10 years of experience in the industry. She has a proven track
-                  record of helping businesses achieve their goals through strategic planning, data-driven
-                  decision-making, and effective change management.
-                </p>
               </div>
             </div>
           </div>
-          <PortfolioTrain />
+          <HighlightedOffering />
         </section>
-        <section className="py-12 md:py-24 bg-gray-100 dark:bg-gray-800" id="approach">
+        <section className="py-12 md:py-24 bg-customGray text-customWhite" id="approach">
           <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold">Our Approach</h2>
             <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <div className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-950">
-                <LightbulbIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
+              <div className="rounded-lg bg-red-900 p-6 shadow-md ">
+                <LightbulbIcon className="h-8 w-8  " />
                 <h3 className="mt-4 text-lg font-bold">Innovative Solutions</h3>
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  We develop creative and innovative solutions to help our clients achieve their goals.
+                <p className="mt-2  ">
+                  We leverage cutting-edge technologies and industry best practices to deliver tailored solutions that drive success for your startup. Our team excels at turning complex challenges into straightforward, effective strategies that propel your business forward.
                 </p>
               </div>
-              <div className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-950">
-                <BarChartIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
+              <div className="rounded-lg bg-red-900 p-6 shadow-md ">
+                <BarChartIcon className="h-8 w-8  " />
                 <h3 className="mt-4 text-lg font-bold">Data-Driven Insights</h3>
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  We leverage data and analytics to provide our clients with actionable insights.
+                <p className="mt-2  ">
+                  Using advanced analytics and data science, we provide actionable insights that inform your strategic decisions. Our data-driven approach ensures that every move you make is backed by solid evidence and predictive intelligence, maximizing your chances of success.
                 </p>
               </div>
-              <div className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-950">
-                <UsersIcon className="h-8 w-8 text-gray-500 dark:text-gray-400" />
+              <div className="rounded-lg bg-red-900 p-6 shadow-md ">
+                <UsersIcon className="h-8 w-8  " />
                 <h3 className="mt-4 text-lg font-bold">Collaborative Approach</h3>
-                <p className="mt-2 text-gray-500 dark:text-gray-400">
-                  We work closely with our clients to ensure a seamless and successful engagement.
+                <p className="mt-2  ">
+                  We believe in working closely with your team to understand your unique needs and goals. Our collaborative methodology ensures that we are aligned with your vision, fostering a partnership that drives innovation and growth together.
                 </p>
               </div>
             </div>
           </div>
         </section>
-        <section className="py-12 md:py-24" id="contact">
+        <section className="py-12 md:py-24 text-customGray bg-customWhite" id="contact">
           <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold">Get in Touch</h2>
             <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
               <div>
-                <p className="text-gray-500 dark:text-gray-400">
+                <p className=" ">
                   Have a project in mind or want to learn more about our services? Fill out the form below and one of
                   our consultants will be in touch with you shortly.
                 </p>
@@ -226,7 +164,7 @@ export function ThePage() {
                     <Label htmlFor="message">Message</Label>
                     <Textarea id="message" placeholder="How can we help you?" required rows={5} />
                   </div>
-                  <Button className="w-full" type="submit">
+                  <Button className="w-1/4" variant="destructive">
                     Submit
                   </Button>
                 </form>
@@ -236,7 +174,7 @@ export function ThePage() {
                   alt="Contact"
                   className="rounded-lg"
                   height={400}
-                  src="/contact-image.jpg"
+                  src="/contact-image.png"
                   style={{
                     aspectRatio: "400/400",
                     objectFit: "cover",
@@ -247,53 +185,51 @@ export function ThePage() {
           </div>
         </section>
       </main>
-      <footer className="bg-gray-900 text-white">
+      <footer className="bg-customGray text-customWhite">
         <div className="container mx-auto py-8 px-4 md:px-6">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div>
               <h3 className="text-lg font-bold">About Us</h3>
-              <p className="mt-4 text-gray-400">
-                Acme Consultancy is a leading provider of strategic consulting services. We help businesses achieve
-                their goals through innovative solutions and data-driven insights.
+              <p className="mt-4">
+                Unlock the full potential of your SaaS, web3, or early stage startup with Redbridge Solutions. Our team of experts will guide you through every step of the product development process, from ideation to launch. With our proven strategies and industry insights, we'll help you build a successful and scalable product that meets the needs of your target audience.
               </p>
             </div>
             <div>
               <h3 className="text-lg font-bold">Quick Links</h3>
               <nav className="mt-4 space-y-2">
-                <Link className="text-gray-400 hover:text-white" href="#">
+                <Link className="hover:text-gray-300" href="#">
                   Home
                 </Link>
-                <Link className="text-gray-400 hover:text-white" href="#">
+                <Link className="hover:text-gray-300 pl-2" href="#">
                   Services
                 </Link>
-                <Link className="text-gray-400 hover:text-white" href="#">
+                <Link className="hover:text-gray-300 pl-2" href="#">
                   Team
                 </Link>
-                <Link className="text-gray-400 hover:text-white" href="#">
+                <Link className="hover:text-gray-300 pl-2" href="#">
                   Approach
                 </Link>
-                <Link className="text-gray-400 hover:text-white" href="#">
+                <Link className="hover:text-gray-300 pl-2" href="#">
                   Contact
                 </Link>
               </nav>
             </div>
             <div>
               <h3 className="text-lg font-bold">Contact Us</h3>
-              <p className="mt-4 text-gray-400">
-                123 Main Street, Anytown USA
-                <br />
-                Phone: (123) 456-7890
+              <p className="mt-4">
+                PO Box 195
+                Crows Nest NSW 1585
                 <br />
                 Email: info@acmeconsultancy.com
               </p>
             </div>
           </div>
-          <div className="mt-8 border-t border-gray-700 pt-4 text-center text-gray-400">
-            © 2024 Cam Consultancy. All rights reserved.
+          <div className="mt-8 border-t border-gray-700 pt-4 text-center">
+            © 2024 Redbridge Solutions Pty Ltd. All rights reserved.
           </div>
         </div>
       </footer>
-    </>);
+    </main>);
 }
 
 function BarChartIcon(props) {
@@ -312,58 +248,6 @@ function BarChartIcon(props) {
       <line x1="12" x2="12" y1="20" y2="10" />
       <line x1="18" x2="18" y1="20" y2="4" />
       <line x1="6" x2="6" y1="20" y2="16" />
-    </svg>)
-  );
-}
-
-
-function BriefcaseIcon(props) {
-  return (
-    (<svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round">
-      <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-      <rect width="20" height="14" x="2" y="6" rx="2" />
-    </svg>)
-  );
-}
-
-
-function CogIcon(props) {
-  return (
-    (<svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round">
-      <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" />
-      <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
-      <path d="M12 2v2" />
-      <path d="M12 22v-2" />
-      <path d="m17 20.66-1-1.73" />
-      <path d="M11 10.27 7 3.34" />
-      <path d="m20.66 17-1.73-1" />
-      <path d="m3.34 7 1.73 1" />
-      <path d="M14 12h8" />
-      <path d="M2 12h2" />
-      <path d="m20.66 7-1.73 1" />
-      <path d="m3.34 17 1.73-1" />
-      <path d="m17 3.34-1 1.73" />
-      <path d="m11 13.73-4 6.93" />
     </svg>)
   );
 }
