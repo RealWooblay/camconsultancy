@@ -1,5 +1,4 @@
 "use client"
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
@@ -7,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { useState } from "react"
 import HighlightedOffering from "./highligted-offering"
 import Image from "next/image"
+import { Link as ScrollLink, Element } from "react-scroll"
 
 export function ThePage() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -14,22 +14,22 @@ export function ThePage() {
     <main className="">
       <header className="w-full bg-red-900 text-customWhite">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
-          <Link className="text-lg font-bold" href="#">
-            Acme Consultancy
-          </Link>
+          <ScrollLink className="text-lg font-bold cursor-pointer" smooth={true} duration={500} to="#">
+            Redbridge
+          </ScrollLink>
           <nav className="hidden space-x-4 md:flex">
-            <Link className="hover:underline" href="#home">
+            <ScrollLink className="hover:underline cursor-pointer" to="home" smooth={true} duration={500} >
               Home
-            </Link>
-            <Link className="hover:underline" href="#team">
+            </ScrollLink>
+            <ScrollLink className="hover:underline cursor-pointer" to="team" smooth={true} duration={500}>
               Team
-            </Link>
-            <Link className="hover:underline" href="#approach">
+            </ScrollLink>
+            <ScrollLink className="hover:underline cursor-pointer" to="approach" smooth={true} duration={500}>
               Approach
-            </Link>
-            <Link className="hover:underline" href="#contact">
+            </ScrollLink>
+            <ScrollLink className="hover:underline cursor-pointer" to="contact" smooth={true} duration={500}>
               Contact
-            </Link>
+            </ScrollLink>
           </nav>
           <Button
             className="md:hidden"
@@ -43,23 +43,23 @@ export function ThePage() {
         </div>
         {isNavOpen && (
           <nav className="md:hidden text-customWhite">
-            <Link className="block py-2 px-4 hover:bg-gray-800" href="#home">
+            <ScrollLink className="block py-2 px-4 hover:bg-gray-800" to="#home" smooth={true} duration={500}>
               Home
-            </Link>
-            <Link className="block py-2 px-4 hover:bg-gray-800" href="#team">
+            </ScrollLink>
+            <ScrollLink className="block py-2 px-4 hover:bg-gray-800" to="#team" smooth={true} duration={500}>
               Team
-            </Link>
-            <Link className="block py-2 px-4 hover:bg-gray-800" href="#approach">
+            </ScrollLink>
+            <ScrollLink className="block py-2 px-4 hover:bg-gray-800" to="#approach" smooth={true} duration={500}>
               Approach
-            </Link>
-            <Link className="block py-2 px-4 hover:bg-gray-800" href="#contact">
+            </ScrollLink>
+            <ScrollLink className="block py-2 px-4 hover:bg-gray-800" to="#contact" smooth={true} duration={500}>
               Contact
-            </Link>
+            </ScrollLink>
           </nav>
         )}
       </header>
       <main>
-        <section className="relative h-[500px] w-full overflow-hidden" id="home">
+        <Element className="relative h-[500px] w-full overflow-hidden" id="home">
           <Image
             alt=""
             className="object-cover"
@@ -69,8 +69,8 @@ export function ThePage() {
             className="absolute inset-0 bg-gray-900/70 flex items-center justify-center">
             <h1 className="text-4xl font-bold  md:text-6xl">Transforming Businesses</h1>
           </div>
-        </section>
-        <section className="py-8 md:py-16 text-customWhite bg-customGray" id="team">
+        </Element>
+        <Element className="py-8 md:py-16 text-customWhite bg-customGray" id="team">
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div className="flex items-center justify-center">
@@ -88,24 +88,6 @@ export function ThePage() {
               <div className="flex items-center justify-center">
                 <div>
                   <h2 className="text-3xl font-bold">Experienced and Dedicated Team</h2>
-                  <div className="mt-8 flex items-center space-x-4">
-                    <div className="flex flex-col items-start">
-                      <div className="mt-2 flex space-x-4">
-                        <Link
-                          href="#">
-                          <LinkedinIcon className="h-6 w-6" />
-                        </Link>
-                        <Link
-                          href="#">
-                          <TwitterIcon className="h-6 w-6" />
-                        </Link>
-                        <Link
-                          href="#">
-                          <GithubIcon className="h-6 w-6" />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
                   <p className="mt-4  ">
                     Our team consists of experienced professionals who are passionate about helping startups succeed. With a deep understanding of the SaaS and web3 industries, we bring valuable insights and expertise to every project. We work closely with our clients to ensure their vision is translated into a successful product.
                   </p>
@@ -114,8 +96,8 @@ export function ThePage() {
             </div>
           </div>
           <HighlightedOffering />
-        </section>
-        <section className="py-12 md:py-24 bg-customGray text-customWhite" id="approach">
+        </Element>
+        <Element className="py-12 md:py-24 bg-customGray text-customWhite" name="approach">
           <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold">Our Approach</h2>
             <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -142,8 +124,8 @@ export function ThePage() {
               </div>
             </div>
           </div>
-        </section>
-        <section className="py-12 md:py-24 text-customGray bg-customWhite" id="contact">
+        </Element>
+        <Element className="py-12 md:py-24 text-customGray bg-customWhite" name="contact">
           <div className="container mx-auto px-4 md:px-6">
             <h2 className="text-3xl font-bold">Get in Touch</h2>
             <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -184,7 +166,7 @@ export function ThePage() {
               </div>
             </div>
           </div>
-        </section>
+        </Element>
       </main>
       <footer className="bg-customGray text-customWhite">
         <div className="container mx-auto py-8 px-4 md:px-6">
@@ -196,23 +178,20 @@ export function ThePage() {
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-bold">Quick Links</h3>
+              <h3 className="text-lg font-bold">Quick ScrollLinks</h3>
               <nav className="mt-4 space-y-2">
-                <Link className="hover:text-gray-300" href="#">
+                <ScrollLink className="hover:text-gray-300 cursor-pointer" to="home">
                   Home
-                </Link>
-                <Link className="hover:text-gray-300 pl-2" href="#">
-                  Services
-                </Link>
-                <Link className="hover:text-gray-300 pl-2" href="#">
+                </ScrollLink>
+                <ScrollLink className="hover:text-gray-300 pl-2 cursor-pointer" to="team">
                   Team
-                </Link>
-                <Link className="hover:text-gray-300 pl-2" href="#">
+                </ScrollLink>
+                <ScrollLink className="hover:text-gray-300 pl-2 cursor-pointer" to="approach">
                   Approach
-                </Link>
-                <Link className="hover:text-gray-300 pl-2" href="#">
+                </ScrollLink>
+                <ScrollLink className="hover:text-gray-300 pl-2 cursor-pointer" to="contact">
                   Contact
-                </Link>
+                </ScrollLink>
               </nav>
             </div>
             <div>
@@ -230,7 +209,8 @@ export function ThePage() {
           </div>
         </div>
       </footer>
-    </main>);
+    </main>
+  );
 }
 
 function BarChartIcon(props) {
@@ -297,7 +277,7 @@ function LightbulbIcon(props) {
 }
 
 
-function LinkedinIcon(props) {
+function ScrollLinkedinIcon(props) {
   return (
     (<svg
       {...props}
