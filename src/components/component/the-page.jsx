@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useState } from "react"
 import HighlightedOffering from "./highligted-offering"
+import Image from "next/image"
 
 export function ThePage() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -59,7 +60,7 @@ export function ThePage() {
       </header>
       <main>
         <section className="relative h-[500px] w-full overflow-hidden" id="home">
-          <img
+          <Image
             alt=""
             className="object-cover"
             fill
@@ -73,7 +74,7 @@ export function ThePage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
               <div className="flex items-center justify-center">
-                <img
+                <Image
                   alt="Team Member"
                   className="rounded-lg"
                   height={400}
@@ -170,7 +171,7 @@ export function ThePage() {
                 </form>
               </div>
               <div className="flex items-center justify-center">
-                <img
+                <Image
                   alt="Contact"
                   className="rounded-lg"
                   height={400}
