@@ -13,7 +13,7 @@ export function ThePage() {
   return (
     <main className="">
       <header className="w-full bg-red-900 text-customWhite">
-        <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+        <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6 font-sans">
           <ScrollLink className="text-lg font-bold cursor-pointer" smooth={true} duration={500} to="#">
             Redbridge
           </ScrollLink>
@@ -42,7 +42,7 @@ export function ThePage() {
           </Button>
         </div>
         {isNavOpen && (
-          <nav className="md:hidden text-customWhite">
+          <nav className="md:hidden text-customWhite font-sans">
             <ScrollLink className="block py-2 px-4 hover:bg-gray-800" to="#home" smooth={true} duration={500}>
               Home
             </ScrollLink>
@@ -64,10 +64,10 @@ export function ThePage() {
             alt=""
             className="object-cover"
             fill
-            src="/techhex.png" />
+            src="/heroIMG.jpg" />
           <div
             className="absolute inset-0 bg-gray-900/70 flex items-center justify-center">
-            <h1 className="text-4xl font-bold  md:text-6xl">Transforming Businesses</h1>
+            <h1 className="text-4xl font-bold  md:text-6xl font-roboto">Transforming Businesses</h1>
           </div>
         </Element>
         <Element className="py-8 md:py-16 text-customWhite bg-customGray" id="team">
@@ -77,18 +77,18 @@ export function ThePage() {
                 <Image
                   alt="Team Member"
                   className="rounded-lg"
-                  height={400}
-                  src="/team.png"
+                  height={450}
+                  src="/team.jpg"
                   style={{
                     aspectRatio: "300/400",
                     objectFit: "contain",
                   }}
-                  width={400} />
+                  width={450} />
               </div>
               <div className="flex items-center justify-center">
                 <div>
-                  <h2 className="text-3xl font-bold">Experienced and Dedicated Team</h2>
-                  <p className="mt-4  ">
+                  <h2 className="text-3xl font-roboto">Experienced and Dedicated Team</h2>
+                  <p className="mt-4 font-sans">
                     Our team consists of experienced professionals who are passionate about helping startups succeed. With a deep understanding of the SaaS and web3 industries, we bring valuable insights and expertise to every project. We work closely with our clients to ensure their vision is translated into a successful product.
                   </p>
                 </div>
@@ -99,26 +99,26 @@ export function ThePage() {
         </Element>
         <Element className="py-12 md:py-24 bg-customGray text-customWhite" name="approach">
           <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-3xl font-bold">Our Approach</h2>
+            <h2 className="text-3xl font-roboto">Our Approach</h2>
             <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <div className="rounded-lg bg-red-900 p-6 shadow-md ">
+              <div className="rounded-lg bg-red-900 p-6 shadow-lg transform hover:scale-105 transition-transform">
                 <LightbulbIcon className="h-8 w-8  " />
-                <h3 className="mt-4 text-lg font-bold">Innovative Solutions</h3>
-                <p className="mt-2  ">
+                <h3 className="mt-4 text-lg font-roboto">Innovative Solutions</h3>
+                <p className="mt-2 font-sans">
                   We leverage cutting-edge technologies and industry best practices to deliver tailored solutions that drive success for your startup. Our team excels at turning complex challenges into straightforward, effective strategies that propel your business forward.
                 </p>
               </div>
-              <div className="rounded-lg bg-red-900 p-6 shadow-md ">
+              <div className="rounded-lg bg-red-900 p-6 shadow-lg transform hover:scale-105 transition-transform">
                 <BarChartIcon className="h-8 w-8  " />
-                <h3 className="mt-4 text-lg font-bold">Data-Driven Insights</h3>
-                <p className="mt-2  ">
+                <h3 className="mt-4 text-lg font-roboto">Data-Driven Insights</h3>
+                <p className="mt-2 font-sans">
                   Using advanced analytics and data science, we provide actionable insights that inform your strategic decisions. Our data-driven approach ensures that every move you make is backed by solid evidence and predictive intelligence, maximizing your chances of success.
                 </p>
               </div>
-              <div className="rounded-lg bg-red-900 p-6 shadow-md ">
+              <div className="rounded-lg bg-red-900 p-6 shadow-lg transform hover:scale-105 transition-transform">
                 <UsersIcon className="h-8 w-8  " />
-                <h3 className="mt-4 text-lg font-bold">Collaborative Approach</h3>
-                <p className="mt-2  ">
+                <h3 className="mt-4 text-lg font-roboto">Collaborative Approach</h3>
+                <p className="mt-2 font-sans">
                   We believe in working closely with your team to understand your unique needs and goals. Our collaborative methodology ensures that we are aligned with your vision, fostering a partnership that drives innovation and growth together.
                 </p>
               </div>
@@ -127,14 +127,14 @@ export function ThePage() {
         </Element>
         <Element className="py-12 md:py-24 text-customGray bg-customWhite" name="contact">
           <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-3xl font-bold">Get in Touch</h2>
+            <h2 className="text-3xl font-roboto">Get in Touch</h2>
             <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
               <div>
-                <p className=" ">
+                <p className="font-sans">
                   Have a project in mind or want to learn more about our services? Fill out the form below and one of
                   our consultants will be in touch with you shortly.
                 </p>
-                <form className="mt-6 space-y-4">
+                <form className="mt-6 space-y-4 font-sans">
                   <div>
                     <Label htmlFor="name">Name</Label>
                     <Input id="name" placeholder="John Doe" required type="text" />
@@ -172,14 +172,14 @@ export function ThePage() {
         <div className="container mx-auto py-8 px-4 md:px-6">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div>
-              <h3 className="text-lg font-bold">About Us</h3>
-              <p className="mt-4">
+              <h3 className="text-lg font-roboto">About Us</h3>
+              <p className="mt-4 font-sans">
                 Unlock the full potential of your SaaS, web3, or early stage startup with Redbridge Solutions. Our team of experts will guide you through every step of the product development process, from ideation to launch. With our proven strategies and industry insights, we&apos;ll help you build a successful and scalable product that meets the needs of your target audience.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-bold">Quick ScrollLinks</h3>
-              <nav className="mt-4 space-y-2">
+              <h3 className="text-lg font-roboto">Quick Links</h3>
+              <nav className="mt-4 space-y-2 font-sans">
                 <ScrollLink className="hover:text-gray-300 cursor-pointer" to="home">
                   Home
                 </ScrollLink>
@@ -195,16 +195,16 @@ export function ThePage() {
               </nav>
             </div>
             <div>
-              <h3 className="text-lg font-bold">Contact Us</h3>
-              <p className="mt-4">
+              <h3 className="text-lg font-roboto">Contact Us</h3>
+              <p className="mt-4 font-sans">
                 PO Box 195
                 Crows Nest NSW 1585
                 <br />
-                Email: info@acmeconsultancy.com
+                Email: Info@redbridge.com.au
               </p>
             </div>
           </div>
-          <div className="mt-8 border-t border-gray-700 pt-4 text-center">
+          <div className="mt-8 border-t border-gray-700 pt-4 text-center text-gray-500 font-sans">
             © 2024 Redbridge Solutions Pty Ltd. All rights reserved.
           </div>
         </div>

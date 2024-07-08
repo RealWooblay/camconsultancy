@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../public/roboto/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../public/day_roman/DAYROM__.ttf') format('truetype');
+}
+
 :root {
   --foreground-rgb: 249, 246, 238;
   --background-start-rgb: 249, 246, 238;
@@ -17,6 +33,7 @@
 }
 
 body {
+  font-family: 'Roboto', sans-serif;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom,
       transparent,
