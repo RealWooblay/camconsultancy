@@ -6,37 +6,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
 const ContactForm = () => {
-    const [formState, setFormState] = useState({
-        name: '',
-        email: '',
-        message: '',
-    });
     const [successMessage, setSuccessMessage] = useState(false);
 
-    const handleChange = (e) => {
-        const { id, value } = e.target;
-        setFormState((prevState) => ({
-            ...prevState,
-            [id]: value,
-        }));
-    };
-
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
-
-        try {
-            await fetch('/', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData).toString(),
-            });
-            setFormState({ name: '', email: '', message: '' });
-            setSuccessMessage(true);
-        } catch (error) {
-            alert('Error: ' + error);
-        }
+        setSuccessMessage(true);
     };
 
     return (
@@ -54,11 +28,10 @@ const ContactForm = () => {
                             className="mt-6 space-y-4 font-sans"
                             name="contact"
                             method="POST"
-                            data-netlify="true"
+                            netlify
                             data-netlify-honeypot="bot-field"
                             onSubmit={handleSubmit}
                         >
-                            <input type="hidden" name="form-name" value="contact" />
                             <p className="hidden">
                                 <label>
                                     Don’t fill this out if you’re human: <input name="bot-field" />
@@ -66,41 +39,17 @@ const ContactForm = () => {
                             </p>
                             <div>
                                 <Label htmlFor="name">Name</Label>
-                                <Input
-                                    id="name"
-                                    name="name"
-                                    placeholder="John Doe"
-                                    required
-                                    type="text"
-                                    value={formState.name}
-                                    onChange={handleChange}
-                                />
+                                <Input id="name" name="name" placeholder="John Doe" required type="text" />
                             </div>
                             <div>
                                 <Label htmlFor="email">Email</Label>
-                                <Input
-                                    id="email"
-                                    name="email"
-                                    placeholder="john@example.com"
-                                    required
-                                    type="email"
-                                    value={formState.email}
-                                    onChange={handleChange}
-                                />
+                                <Input id="email" name="email" placeholder="john@example.com" required type="email" />
                             </div>
                             <div>
                                 <Label htmlFor="message">Message</Label>
-                                <Textarea
-                                    id="message"
-                                    name="message"
-                                    placeholder="How can we help you?"
-                                    required
-                                    rows={5}
-                                    value={formState.message}
-                                    onChange={handleChange}
-                                />
+                                <Textarea id="message" name="message" placeholder="How can we help you?" required rows={5} />
                             </div>
-                            <Button className="w-1/4" variant="destructive">
+                            <Button className="w-1/4" variant="destructive" type="submit">
                                 Submit
                             </Button>
                             {successMessage && (
