@@ -1,10 +1,3 @@
-<form name="contact" method="POST" data-netlify="true" hidden>
-    <input type="hidden" name="form-name" value="contact" />
-    <input type="text" name="name" />
-    <input type="email" name="email" />
-    <textarea name="message"></textarea>
-</form>
-
 import React, { useState } from 'react';
 import { Element } from 'react-scroll';
 import { Label } from "@/components/ui/label";
