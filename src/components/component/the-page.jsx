@@ -1,15 +1,15 @@
 "use client"
 import { Button } from "@/components/ui/button"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import ContactForm from "@/components/component/ContactForm"
 import { useState } from "react"
 import HighlightedOffering from "./highligted-offering"
 import Image from "next/image"
 import { Link as ScrollLink, Element } from "react-scroll"
 
+
 export function ThePage() {
   const [isNavOpen, setIsNavOpen] = useState(false);
+
   return (
     <main className="">
       <header className="w-full bg-red-900 text-customWhite">
@@ -127,30 +127,9 @@ export function ThePage() {
         </Element>
         <Element className="py-12 md:py-24 text-customGray bg-customWhite" name="contact">
           <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-3xl font-roboto">Get in Touch</h2>
             <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
               <div>
-                <p className="font-sans">
-                  Have a project in mind or want to learn more about our services? Fill out the form below and one of
-                  our consultants will be in touch with you shortly.
-                </p>
-                <form className="mt-6 space-y-4 font-sans">
-                  <div>
-                    <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="John Doe" required type="text" />
-                  </div>
-                  <div>
-                    <Label htmlFor="email">Email</Label>
-                    <Input id="email" placeholder="john@example.com" required type="email" />
-                  </div>
-                  <div>
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea id="message" placeholder="How can we help you?" required rows={5} />
-                  </div>
-                  <Button className="w-1/4" variant="destructive">
-                    Submit
-                  </Button>
-                </form>
+                <ContactForm />
               </div>
               <div className="flex items-center justify-center">
                 <Image
@@ -234,27 +213,6 @@ function BarChartIcon(props) {
 }
 
 
-function GithubIcon(props) {
-  return (
-    (<svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round">
-      <path
-        d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-      <path d="M9 18c-4.51 2-5-2-7-2" />
-    </svg>)
-  );
-}
-
-
 function LightbulbIcon(props) {
   return (
     (<svg
@@ -277,28 +235,6 @@ function LightbulbIcon(props) {
 }
 
 
-function ScrollLinkedinIcon(props) {
-  return (
-    (<svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round">
-      <path
-        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-      <rect width="4" height="12" x="2" y="9" />
-      <circle cx="4" cy="4" r="2" />
-    </svg>)
-  );
-}
-
-
 function MenuIcon(props) {
   return (
     (<svg
@@ -315,50 +251,6 @@ function MenuIcon(props) {
       <line x1="4" x2="20" y1="12" y2="12" />
       <line x1="4" x2="20" y1="6" y2="6" />
       <line x1="4" x2="20" y1="18" y2="18" />
-    </svg>)
-  );
-}
-
-
-function RocketIcon(props) {
-  return (
-    (<svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round">
-      <path
-        d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
-      <path
-        d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
-      <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
-      <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
-    </svg>)
-  );
-}
-
-
-function TwitterIcon(props) {
-  return (
-    (<svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round">
-      <path
-        d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
     </svg>)
   );
 }
