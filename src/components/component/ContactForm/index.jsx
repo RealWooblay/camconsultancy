@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Element } from 'react-scroll';
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 const ContactForm = () => {
     const [formState, setFormState] = useState({
@@ -55,11 +55,15 @@ const ContactForm = () => {
                             name="contact"
                             method="POST"
                             data-netlify="true"
+                            data-netlify-honeypot="bot-field"
                             onSubmit={handleSubmit}
-                            netlify-honeypot="bot-field"
-                            netlify
                         >
                             <input type="hidden" name="form-name" value="contact" />
+                            <p className="hidden">
+                                <label>
+                                    Don’t fill this out if you’re human: <input name="bot-field" />
+                                </label>
+                            </p>
                             <div>
                                 <Label htmlFor="name">Name</Label>
                                 <Input
