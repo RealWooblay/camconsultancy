@@ -24,19 +24,12 @@ const ContactForm = () => {
                             our consultants will be in touch with you shortly.
                         </p>
                         <form
-                            id="contact-form"
                             className="mt-6 space-y-4 font-sans"
                             name="contact"
                             method="POST"
-                            netlify
-                            data-netlify-honeypot="bot-field"
+                            data-netlify="true"
                             onSubmit={handleSubmit}
                         >
-                            <p className="hidden">
-                                <label>
-                                    Don’t fill this out if you’re human: <input name="bot-field" />
-                                </label>
-                            </p>
                             <div>
                                 <Label htmlFor="name">Name</Label>
                                 <Input id="name" name="name" placeholder="John Doe" required type="text" />
